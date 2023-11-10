@@ -33,11 +33,16 @@ for file in list_of_files:
         
         #se path2 existir, mova o arquivo para path3
         if os.path.exists(path2):
+            print(f"movendo {file}...")
+            shutil.move(path1,path3)
              
             
 
         #caso contrário, crie a path2 e mova o arquivo para path3
-        
+        else:
+            os.makedirs(path2)
+            print(f"movendo {file}...")
+            shutil.move(path1,path3)
         
         
 #Fim
